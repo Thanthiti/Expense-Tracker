@@ -20,9 +20,6 @@ function ExpenseForm({ addExpense }) {
     setForm({ ...form, [name]: value });
   };
 
-  // const dateStr = d.toLocaleDateString(); // "26/7/2025"
-  // const timeStr = d.toLocaleTimeString(); // "15:14:31"
-
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!form.amount || !form.category) return;
@@ -48,12 +45,12 @@ function ExpenseForm({ addExpense }) {
     <form onSubmit={handleSubmit}>
       <input
         name="amount"
-        placeholder="จำนวนเงิน"
+        placeholder="amount"
         value={form.amount}
         onChange={handleChange}
       />
       <select name="category" value={form.category} onChange={handleChange}>
-        <option value="">-- เลือกหมวดหมู่ --</option>
+        <option value="">-- select --</option>
         {categories.map((cat) => (
           <option key={cat} value={cat}>
             {cat}
@@ -63,12 +60,12 @@ function ExpenseForm({ addExpense }) {
 
       <input
         name="description"
-        placeholder="รายละเอียด"
+        placeholder="description"
         value={form.description}
         onChange={handleChange}
       />
 
-      <button type="submit">เพิ่มรายจ่าย</button>
+      <button type="submit">Save</button>
     </form>
   );
 }
