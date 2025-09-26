@@ -50,7 +50,7 @@
 
 /* Category */
 .li strong {
-  color: #1a73e8; /* สีฟ้าแบบ KBank */
+  color: #1a73e8; 
   font-size: 16px;
 }
 
@@ -69,7 +69,7 @@
   text-align: right;
 }
 
-/* ปรับ input ปฏิทินให้สวย */
+
 input[type="date"] {
   padding: 6px 10px;
   border-radius: 6px;
