@@ -6,7 +6,7 @@
   width: 90%;       /* กำหนดความกว้างเป็น % ของ container */
   max-width: 600px; /* จำกัดไม่ให้เกิน 600px */
   margin: 0 auto;   /* จัดให้อยู่กลางหน้าจอ */
-  min-height: 50vh; /* ความสูงขั้นต่ำ */
+  min-height: 40vh; /* ความสูงขั้นต่ำ */
   padding: 10px;
   background: #f5f5f5;
   box-sizing: border-box;
@@ -29,6 +29,11 @@
   border: 2px solid #00aa00;
   padding: 20px;
   text-align: center;
+
+  /* ปรับขนาดสูงสุด และให้ scroll */
+  max-height: 400px;       /* กำหนดสูงสุดของกล่อง */
+  overflow-y: auto;        /* scroll แนวตั้ง */
+  overflow-x: hidden;      /* ป้องกัน scroll แนวนอน */
 }
 
 .box3 {

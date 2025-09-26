@@ -1,6 +1,8 @@
-import { useEffect } from "react";
+import { useEffect, useMemo, useState } from "react";
 import useLocalStorage from "./hooks/useLocalStorage";
 import ExpenseForm from "./Components/ExpenseForm";
+import ExpenseList from "./Components/ExpenseList";
+import Dashboard from "./components/Dashboard";
 
 
 import style from "./css/App.module.css";
@@ -8,9 +10,9 @@ import style from "./css/App.module.css";
 function App() {
   const [expenses, setExpenses] = useLocalStorage("expenses", []);
 
-
   useEffect(()=>{
     const data = localStorage.getItem("expense")
+    // localStorage.clear()
       if (data) {
         setExpenses(JSON.parse(data));
       }
@@ -21,7 +23,7 @@ function App() {
    setExpenses(newExpenses);
    localStorage.setItem("expenses", JSON.stringify(newExpenses));
 
-   console.log("รายการทั้งหมด", newExpenses); 
+   console.log("รายการทั้งหมด:", newExpenses); // <-- log รายจ่ายทั้งหมด
  };
 
   return (
@@ -33,10 +35,17 @@ function App() {
           <ExpenseForm addExpense={addExpense}></ExpenseForm> 
         </div>
 
-        <div className={style.box2}>กล่อง 2 (Dashboard)</div>
+        <div className={style.box2}>
+
+          <ExpenseList
+            expenses={expenses}
+            ></ExpenseList>
+            </div>
+
         <div className={style.box3}>
-          
-        </div>
+          <Dashboard expenses={expenses}></Dashboard>
+            </div>
+  
       </div>
     </>
   );
