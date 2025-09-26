@@ -1,9 +1,8 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect } from "react";
 import useLocalStorage from "./hooks/useLocalStorage";
 import ExpenseForm from "./Components/ExpenseForm";
 import ExpenseList from "./Components/ExpenseList";
 import Dashboard from "./components/Dashboard";
-
 
 import style from "./css/App.module.css";
 
@@ -23,12 +22,12 @@ function App() {
    setExpenses(newExpenses);
    localStorage.setItem("expenses", JSON.stringify(newExpenses));
 
-   console.log("รายการทั้งหมด:", newExpenses); // <-- log รายจ่ายทั้งหมด
+   console.log("รายการทั้งหมด:", newExpenses); 
  };
 
   return (
     <>
-      <h1>📒 รายจ่ายของฉัน</h1>
+      <h1>Expense Tracker</h1>
 
       <div className={style.parent}>
         <div className={style.box1}>

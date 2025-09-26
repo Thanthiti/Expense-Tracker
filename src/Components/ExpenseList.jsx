@@ -45,9 +45,15 @@ function ExpenseList({ expenses = [] }) {
           <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
             {groupedByDate[date].map((exp) => (
               <li key={exp.id} className={style.li}>
-                <div>
-                  <strong>{exp.category}</strong> - {exp.amount} บาท{" "}
-                  {exp.description && `- ${exp.description}`}
+                <div style={{ textAlign: "left" }}>
+                  <strong>{exp.category}</strong>
+                  <div>- {exp.amount} THB</div>
+                  <div>
+
+                  {exp.description
+                    ? `- ${exp.description}`
+                    : "- No description"}
+                    </div>
                   <br />
                   <small>{new Date(exp.timestamp).toLocaleTimeString()}</small>
                 </div>
